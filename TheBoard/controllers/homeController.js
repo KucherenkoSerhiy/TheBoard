@@ -1,4 +1,6 @@
-(function(homeController) {
+(function (homeController) {
+    var data = require("../data");
+
     homeController.init = function (app) {
 
         app.get("/",
@@ -6,7 +8,10 @@
                 //res.send("<html><body><h1>" + req.url + "</html></body></h1>");
                 //res.render("jade/index", { title: "Express + Jade" });
                 //res.render("ejs/index", { title: "Express + Ejs" });
-                res.render("index", { title: "Express + Vash" });
+
+                data.getNoteCategories(function(err, results) {
+                    res.render("index", { title: "Express + Vash", error: err, categories: results });
+                });
             });
 
     };
