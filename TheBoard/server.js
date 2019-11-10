@@ -11,6 +11,10 @@ var controllers = require("./controllers");
 //app.set("view engine", "ejs");
 app.set("view engine", "vash");
 
+// allow to download static resources
+var nodeApplicationRootDirectory = __dirname;
+app.use(express.static(nodeApplicationRootDirectory + "/public"));
+
 //Map the routes
 controllers.init(app);
 

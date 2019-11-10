@@ -1,0 +1,3 @@
+C:\Users\skucherenko\source\repos\javascript\TheBoard\TheBoard\obj\Debug\TheBoard.njsprojAssemblyReference.cache
+C:\Users\skucherenko\source\repos\javascript\TheBoard\TheBoard\obj\Debug\TheBoard.njsproj.CoreCompileInputs.cache
+C:\Users\skucherenko\source\repos\javascript\TheBoard\TheBoard\bin\Microsoft.NodejsTools.WebRole.dll
