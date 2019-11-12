@@ -5,3 +5,4 @@
 /TheBoard/node_modules
 *.lock
 /TheBoard/public/lib
+/mongodb local server/data

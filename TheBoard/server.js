@@ -18,11 +18,14 @@ app.use(express.static(nodeApplicationRootDirectory + "/public"));
 //Map the routes
 controllers.init(app);
 
-app.get("/api/users",
-    function (req, res) {
-        res.set("Content-Type", "application/json");
-        res.send({ name: "Serhiy", isValid: true, group: "Admin" });
-    });
+app.get("/api/users", function (req, res) {
+    res.set("Content-Type", "application/json");
+    res.send({ name: "Serhiy", isValid: true, group: "Admin" });
+});
+
+app.get("/api/mongo", function(req, res) {
+    
+});
 
 var server = http.createServer(app);
 
