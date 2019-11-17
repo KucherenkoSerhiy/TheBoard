@@ -3,6 +3,8 @@
 ################################################################################
 
 /TheBoard/node_modules
+/TheBoard/data
 *.lock
 /TheBoard/public/lib
 /mongodb local server/data
+/.vs/config
