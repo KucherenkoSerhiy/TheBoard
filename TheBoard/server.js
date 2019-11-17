@@ -3,6 +3,7 @@ var http = require('http');
 var express = require('express');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var app = express();
 //var ejsEngine = require('ejs-locals');
 var controllers = require("./controllers");
@@ -17,6 +18,7 @@ app.set("view engine", "vash");
 // Opt into services
 app.use(express.urlencoded());
 app.use(cookieParser());
+app.use(bodyParser());
 app.use(session({ secret: "TheMagicBoard"}));
 app.use(flash());
 
