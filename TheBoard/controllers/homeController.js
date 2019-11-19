@@ -3,22 +3,26 @@
 
     homeController.init = function (app) {
 
-        app.get("/",
-            function (req, res) {
-                //res.send("<html><body><h1>" + req.url + "</html></body></h1>");
-                //res.render("jade/index", { title: "Express + Jade" });
-                //res.render("ejs/index", { title: "Express + Ejs" });
+        app.get("/", function (req, res) {
+            //res.send("<html><body><h1>" + req.url + "</html></body></h1>");
+            //res.render("jade/index", { title: "Express + Jade" });
+            //res.render("ejs/index", { title: "Express + Ejs" });
 
-                data.getNoteCategories(function (err, results) {
-                    res.render("index",
-                        {
-                            title: "The Board",
-                            error: err,
-                            categories: results,
-                            newCatError: req.flash("newCatName")
-                        });
-                });
+            data.getNoteCategories(function (err, results) {
+                res.render("index",
+                    {
+                        title: "The Board",
+                        error: err,
+                        categories: results,
+                        newCatError: req.flash("newCatName")
+                    });
             });
+        });
+
+        app.get("/notes/:categoryName", function(req, res) {
+            var categoryName = req.params.categoryName;
+            res.render("notes", { title: categoryName });
+        });
 
         app.post("/createCategory", function (req, res) {
             var categoryName = req.body.categoryName;
