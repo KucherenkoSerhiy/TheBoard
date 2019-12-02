@@ -39,6 +39,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="gruntfile.js" />
+    <Compile Include="public\js\notesView.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server.js" />
     <Content Include="libman.json" />
     <Content Include="package.json" />
@@ -70,6 +73,7 @@
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="public\images\" />
+    <Folder Include="public\js\" />
     <Folder Include="views\" />
     <Folder Include="views\jade\" />
     <Folder Include="views\ejs\" />
