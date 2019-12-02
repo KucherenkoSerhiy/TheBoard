@@ -1,10 +1,11 @@
 ﻿(function (angular) {
-    var theModule = angular.module("notesView", []);
+    var theModule = angular.module("notesView", ["ui.bootstrap"]);
 
     theModule.controller("notesViewController",
         ["$scope", "$window", "$http",
             function ($scope, $window, $http) {
                 $scope.notes = [];
+                $scope.newNote = createBlankNote();
 
                 //Get the category name
                 var urlParts = $window.location.pathname.split("/");
@@ -15,10 +16,29 @@
                     .then(function(result) {
                         // success
                         $scope.notes = result.data;
+                        $scope.newNote = createBlankNote();
                     }, function(err) {
                         // error
                         alert(err);
                     });
+
+                $scope.save = function() {
+                    $http.post(notesUrl, $scope.newNote)
+                        .then(function(result) {
+                            // success
+                            $scope.notes.push(result.data);
+                        }, function(err) {
+                            // error
+
+                        });
+                }
             }
         ]);
+
+    function createBlankNote() {
+        return {
+            note: "",
+            color: "yellow"
+        };
+    }
 })(window.angular)
